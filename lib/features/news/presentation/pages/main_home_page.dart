@@ -1,17 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fancy_drawer/fancy_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'package:timesofkashmir/features/news/presentation/logic/news_notifier.dart';
 
-import '../widgets/news_item.dart';
 import 'news_home_page.dart';
 
 class HomeView extends ConsumerStatefulWidget {
@@ -23,9 +19,6 @@ class HomeView extends ConsumerStatefulWidget {
 
 class HomeViewState extends ConsumerState<HomeView>
     with TickerProviderStateMixin {
-  final RefreshController _refreshController =
-      RefreshController(initialRefresh: false);
-
   late FancyDrawerController _controller;
 
   @override
@@ -52,15 +45,7 @@ class HomeViewState extends ConsumerState<HomeView>
     final catProvider = ref.watch(categoryNotifierProvider);
     return SafeArea(
       child: Scaffold(
-          body: catProvider.when(initial: () {
-        return null;
-      }, loading: () {
-        return const Center(
-          child: CircularProgressIndicator(
-            color: Colors.red,
-          ),
-        );
-      }, data: (categories) {
+          body: catProvider.when(data: (categories) {
         return DefaultTabController(
           length: categories.length,
           child: FancyDrawerWrapper(
@@ -118,20 +103,7 @@ class HomeViewState extends ConsumerState<HomeView>
                       child: IconButton(
                           onPressed: () {}, icon: Icon(Icons.category)))
                 ],
-                title: AutoSizeText(
-                  "Times of Kashmir",
-                  maxLines: 1,
-                  minFontSize: 14,
-                  maxFontSize: 18,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.ptSerif(
-                    textStyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        letterSpacing: 0.8,
-                        fontStyle: FontStyle.normal),
-                  ),
-                ),
+                title: AppBarTitle(),
                 bottom: TabBar(
                   isScrollable: true,
                   tabs: categories
@@ -140,38 +112,45 @@ class HomeViewState extends ConsumerState<HomeView>
                       .toList(),
                 ),
               ),
-              body: SmartRefresher(
-                controller: _refreshController,
-                enablePullUp: true,
-                header: const WaterDropMaterialHeader(
-                  backgroundColor: Colors.blue,
-                ),
-                physics: const BouncingScrollPhysics(),
-                footer: const ClassicFooter(
-                  loadStyle: LoadStyle.ShowWhenLoading,
-                  completeDuration: Duration(milliseconds: 500),
-                ),
-                onRefresh: () async {
-                  // monitor network fetch
-                  ref.refresh(categoryNotifierProvider);
-                  await Future.delayed(const Duration(milliseconds: 1000));
-                  // if failed,use refreshFailed()
-                  _refreshController.refreshCompleted();
-                },
-                child: TabBarView(
-                  children: categories
-                      .map((e) => NewsHomePage(categoryId: e.id))
-                      .toList(),
-                ),
+              body: TabBarView(
+                children: categories
+                    .map((e) => NewsHomePage(categoryId: e.id ?? 123))
+                    .toList(),
               ),
             ),
           ),
         );
-      }, error: ((error) {
+      }, error: ((error, stack) {
         return Center(
           child: Text(error.toString()),
         );
-      }))),
+      }), loading: () {
+        return Center(child: const CircularProgressIndicator());
+      })),
+    );
+  }
+}
+
+class AppBarTitle extends StatelessWidget {
+  const AppBarTitle({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AutoSizeText(
+      "Times of Kashmir",
+      maxLines: 1,
+      minFontSize: 14,
+      maxFontSize: 18,
+      overflow: TextOverflow.ellipsis,
+      style: GoogleFonts.ptSerif(
+        textStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            letterSpacing: 0.8,
+            fontStyle: FontStyle.normal),
+      ),
     );
   }
 }

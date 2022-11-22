@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'features/news/presentation/pages/main_home_page.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'features/news/presentation/pages/splash.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+  MobileAds.instance.updateRequestConfiguration(RequestConfiguration(
+      testDeviceIds: ["4D7ADA20A7C2C778AB12B3A1AE1DEC3D"]));
   runApp(const ProviderScope(child: MyApp()));
 }
 

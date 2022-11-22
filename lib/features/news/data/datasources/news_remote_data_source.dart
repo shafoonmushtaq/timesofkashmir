@@ -19,7 +19,7 @@ class NewsRemoteDataSourceImpl implements NewsRemoteDataSource {
   @override
   Future<List<NewsModel>> getNews(int categoryId, int nextCount) {
     return _getNewsFromUrl(
-      "${baseUrl}wp-json/wp/v2/posts?categories=$categoryId&per_page=10&offset=$nextCount",
+      "${baseUrl}wp-json/wp/v2/posts?categories=$categoryId&per_page=20&offset=$nextCount",
     );
   }
 

@@ -1,6 +1,5 @@
 import 'package:timesofkashmir/core/error/exceptions.dart';
 import 'package:timesofkashmir/features/news/data/models/category_model.dart';
-import 'package:timesofkashmir/features/news/data/models/news_model.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../../core/util/environment.dart';
