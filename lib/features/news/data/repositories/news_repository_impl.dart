@@ -1,14 +1,14 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/error/failures.dart';
-import '../../../../core/network/network_info.dart';
-import '../../domain/entities/Post.dart';
-import '../../domain/entities/category.dart';
-import '../../domain/entities/news.dart';
-import '../../domain/repositories/news_repository.dart';
-import '../datasources/categories_remote_data_sources.dart';
-import '../datasources/news_remote_data_source.dart';
-import '../datasources/post_remote_data_source.dart';
+import 'package:timesofkashmir/core/error/failures.dart';
+import 'package:timesofkashmir/core/network/network_info.dart';
+import 'package:timesofkashmir/features/news/domain/entities/Post.dart';
+import 'package:timesofkashmir/features/news/domain/entities/category.dart';
+import 'package:timesofkashmir/features/news/domain/entities/news.dart';
+import 'package:timesofkashmir/features/news/domain/repositories/news_repository.dart';
+import 'package:timesofkashmir/features/news/data/datasources/categories_remote_data_sources.dart';
+import 'package:timesofkashmir/features/news/data/datasources/news_remote_data_source.dart';
+import 'package:timesofkashmir/features/news/data/datasources/post_remote_data_source.dart';
 
 class NewsRepositoryImpl extends NewsRepository {
   final NewsRemoteDataSource newsRemoteDataSource;

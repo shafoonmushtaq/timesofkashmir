@@ -5,14 +5,20 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import 'package:timesofkashmir/core/util/html_remover.dart';
+
+import '../../../../core/util/configurations.dart';
+import '../../../../core/util/text_share.dart';
+
 class NewsItem extends StatelessWidget {
-  final String imgIcon, title, date;
+  final String imgIcon, title, date, link;
   final Function onClick;
   const NewsItem(
       {super.key,
       required this.imgIcon,
       required this.title,
       required this.date,
+      required this.link,
       required this.onClick});
 
   @override
@@ -50,7 +56,9 @@ class NewsItem extends StatelessWidget {
                 SizedBox(
                   height: 25,
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Share.share(title, "", link, appTitle);
+                      },
                       icon: Icon(
                         Icons.share,
                         size: 20,
@@ -72,10 +80,9 @@ class NewsItem extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                          image: imageProvider,
-                          fit: BoxFit.cover,
-                          colorFilter: ColorFilter.mode(
-                              Colors.red, BlendMode.colorBurn)),
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   placeholder: (context, url) => SizedBox(
@@ -96,7 +103,7 @@ class NewsItem extends StatelessWidget {
                 ),
                 Expanded(
                   child: AutoSizeText(
-                    title,
+                    HtmlProcess.parseHtmlString(title),
                     maxLines: 2,
                     minFontSize: 14,
                     maxFontSize: 16,

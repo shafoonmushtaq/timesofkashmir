@@ -2,7 +2,7 @@ import 'package:timesofkashmir/core/error/exceptions.dart';
 import 'package:timesofkashmir/features/news/data/models/news_model.dart';
 import 'package:http/http.dart' as http;
 
-import '../../../../core/util/environment.dart';
+import 'package:timesofkashmir/core/util/environment.dart';
 
 abstract class NewsRemoteDataSource {
   /// Calls the https://www.timesofkashmir.in/wp-json/wp/v2/posts/ endpoint.

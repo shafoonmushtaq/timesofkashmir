@@ -3,7 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:timesofkashmir/features/news/domain/entities/category.dart';
 import 'package:timesofkashmir/features/news/presentation/pages/main_home_page.dart';
-import '../logic/news_notifier.dart';
+import 'package:timesofkashmir/core/util/configurations.dart';
+import 'package:timesofkashmir/features/news/presentation/logic/news_notifier.dart';
 
 class SplashScreen extends ConsumerWidget {
   const SplashScreen({super.key});
@@ -29,7 +30,7 @@ class SplashScreen extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Times of Kashmir",
+            appTitle,
             style: GoogleFonts.ptSerif(
               textStyle: const TextStyle(
                   color: Colors.black,

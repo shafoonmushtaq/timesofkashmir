@@ -1,4 +1,4 @@
-package com.example.timesofkashmir
+package `in`.timesofkashmir.tok
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -29,7 +29,6 @@ class Post extends Equatable {
   final List<dynamic>? jetpackPublicizeConnections;
   final String? jetpackFeaturedMediaUrl;
   final bool? jetpackSharingEnabled;
-  final Links? links;
 
   const Post({
     required this.id,
@@ -58,7 +57,6 @@ class Post extends Equatable {
     required this.jetpackPublicizeConnections,
     required this.jetpackFeaturedMediaUrl,
     required this.jetpackSharingEnabled,
-    required this.links,
   });
 
   @override
@@ -89,7 +87,6 @@ class Post extends Equatable {
         jetpackPublicizeConnections,
         jetpackFeaturedMediaUrl,
         jetpackSharingEnabled,
-        links
       ];
 }
 
@@ -126,68 +123,6 @@ class Guid {
 
   Map<String, dynamic> toJson() => {
         "rendered": rendered,
-      };
-}
-
-class Links {
-  Links({
-    required this.self,
-    required this.collection,
-    required this.about,
-    required this.author,
-    required this.replies,
-    required this.versionHistory,
-    required this.wpFeaturedmedia,
-    required this.wpAttachment,
-    required this.wpTerm,
-    required this.curies,
-  });
-
-  List<About> self;
-  List<About> collection;
-  List<About> about;
-  List<Author> author;
-  List<Author> replies;
-  List<VersionHistory> versionHistory;
-  List<Author> wpFeaturedmedia;
-  List<About> wpAttachment;
-  List<WpTerm> wpTerm;
-  List<Cury> curies;
-
-  factory Links.fromJson(Map<String, dynamic> json) => Links(
-        self: List<About>.from(json["self"].map((x) => About.fromJson(x))),
-        collection:
-            List<About>.from(json["collection"].map((x) => About.fromJson(x))),
-        about: List<About>.from(json["about"].map((x) => About.fromJson(x))),
-        author:
-            List<Author>.from(json["author"].map((x) => Author.fromJson(x))),
-        replies:
-            List<Author>.from(json["replies"].map((x) => Author.fromJson(x))),
-        versionHistory: List<VersionHistory>.from(
-            json["version-history"].map((x) => VersionHistory.fromJson(x))),
-        wpFeaturedmedia: List<Author>.from(
-            json["wp:featuredmedia"].map((x) => Author.fromJson(x))),
-        wpAttachment: List<About>.from(
-            json["wp:attachment"].map((x) => About.fromJson(x))),
-        wpTerm:
-            List<WpTerm>.from(json["wp:term"].map((x) => WpTerm.fromJson(x))),
-        curies: List<Cury>.from(json["curies"].map((x) => Cury.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "self": List<dynamic>.from(self.map((x) => x.toJson())),
-        "collection": List<dynamic>.from(collection.map((x) => x.toJson())),
-        "about": List<dynamic>.from(about.map((x) => x.toJson())),
-        "author": List<dynamic>.from(author.map((x) => x.toJson())),
-        "replies": List<dynamic>.from(replies.map((x) => x.toJson())),
-        "version-history":
-            List<dynamic>.from(versionHistory.map((x) => x.toJson())),
-        "wp:featuredmedia":
-            List<dynamic>.from(wpFeaturedmedia.map((x) => x.toJson())),
-        "wp:attachment":
-            List<dynamic>.from(wpAttachment.map((x) => x.toJson())),
-        "wp:term": List<dynamic>.from(wpTerm.map((x) => x.toJson())),
-        "curies": List<dynamic>.from(curies.map((x) => x.toJson())),
       };
 }
 

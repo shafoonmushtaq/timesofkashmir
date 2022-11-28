@@ -10,12 +10,12 @@ String categoryToJson(List<CategoryModel> data) =>
 
 class CategoryModel extends Category {
   const CategoryModel(
-      {required int? id,
-      required int? count,
-      required String? description,
-      required String? link,
-      required String? name,
-      required String? slug})
+      {int? id,
+      int? count,
+      String? description,
+      String? link,
+      String? name,
+      String? slug})
       : super(
             id: id,
             count: count,
@@ -41,4 +41,11 @@ class CategoryModel extends Category {
         "name": name,
         "slug": slug,
       };
+
+  bool equalsName(String name) {
+    if (this.name == name) {
+      return true;
+    }
+    return false;
+  }
 }

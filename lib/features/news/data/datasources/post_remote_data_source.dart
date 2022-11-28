@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 import 'package:timesofkashmir/core/error/exceptions.dart';
 
-import '../../../../core/util/environment.dart';
-import '../models/post_model.dart';
+import 'package:timesofkashmir/core/util/environment.dart';
+import 'package:timesofkashmir/features/news/data/models/post_model.dart';
 
 abstract class PostRemoteDataSource {
   /// Calls the https://www.timesofkashmir.in/wp-json/wp/v2/posts/{postId} endpoint.

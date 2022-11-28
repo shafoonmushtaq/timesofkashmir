@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "545272490174",
+    "project_id": "times-of-kashmir-e68e0",
+    "storage_bucket": "times-of-kashmir-e68e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545272490174:android:e2e2fb90014e3bd41ed6ef",
+        "android_client_info": {
+          "package_name": "in.timesofkashmir.tok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545272490174-1lqmd2grvh2oo2bqhg4ep67pikuhcaut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADgeStDhsALHTWyi-EhgD7jF0VamH-6dI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545272490174-1lqmd2grvh2oo2bqhg4ep67pikuhcaut.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

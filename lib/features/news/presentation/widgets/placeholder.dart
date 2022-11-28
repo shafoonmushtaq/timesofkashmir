@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:timesofkashmir/core/util/configurations.dart';
+
 class PlaceHolderImage extends StatelessWidget {
   const PlaceHolderImage({
     Key? key,
@@ -12,7 +14,7 @@ class PlaceHolderImage extends StatelessWidget {
       color: Theme.of(context).primaryColor,
       child: Center(
         child: Text(
-          "Times of Kashmir",
+          appTitle,
           style: GoogleFonts.ptSerif(
             textStyle: const TextStyle(
                 color: Colors.white,

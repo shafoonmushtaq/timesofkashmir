@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import '../../domain/entities/news.dart';
+import 'package:timesofkashmir/features/news/domain/entities/news.dart';
 
 List<NewsModel> newsModelFromJson(String str) =>
     List<NewsModel>.from(json.decode(str).map((x) => NewsModel.fromJson(x)));

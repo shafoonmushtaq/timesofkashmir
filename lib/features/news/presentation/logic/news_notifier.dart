@@ -8,11 +8,11 @@ import 'package:timesofkashmir/features/news/data/repositories/news_repository_i
 import 'package:timesofkashmir/features/news/domain/entities/Post.dart' as post;
 import 'package:timesofkashmir/features/news/domain/usecases/get_category_use_case.dart';
 import 'package:timesofkashmir/features/news/domain/usecases/get_post_use_case.dart';
-import '../../../../core/usecases/usecase.dart';
-import '../../domain/entities/news.dart';
+import 'package:timesofkashmir/core/usecases/usecase.dart';
+import 'package:timesofkashmir/features/news/domain/entities/news.dart';
 
-import '../../domain/entities/category.dart' as category;
-import '../../domain/usecases/get_news_use_case.dart';
+import 'package:timesofkashmir/features/news/domain/entities/category.dart' as category;
+import 'package:timesofkashmir/features/news/domain/usecases/get_news_use_case.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 

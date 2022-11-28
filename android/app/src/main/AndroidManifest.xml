@@ -1,13 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.timesofkashmir">
+    package="in.timesofkashmir.tok">
      <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="timesofkashmir"
+        android:label="TOK"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:usesCleartextTraffic="true"
+            android:networkSecurityConfig="@xml/network_security_config"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -34,8 +36,20 @@
             android:value="true"/>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+             <meta-data
+        android:name="com.google.firebase.messaging.default_notification_channel_id"
+        android:value="high_importance_channel" />
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       <provider
+           android:name="androidx.core.content.FileProvider"
+           android:authorities="${applicationId}.provider"
+           android:exported="false"
+           android:grantUriPermissions="true">
+           <meta-data
+               android:name="android.support.FILE_PROVIDER_PATHS"
+               android:resource="@xml/provider_path"/>
+       </provider>
     </application>
 </manifest>
