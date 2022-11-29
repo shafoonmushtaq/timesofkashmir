@@ -37,6 +37,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
         throw Exception();
       }
     } catch (_) {
+      print(_.toString() + "::exception");
       throw Exception();
     }
   }

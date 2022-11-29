@@ -23,41 +23,38 @@ class Post extends Equatable {
   final bool? sticky;
   final String? template;
   final String? format;
-  final Meta? meta;
+  final List<dynamic>? meta;
   final List<int>? categories;
   final List<int>? tags;
-  final List<dynamic>? jetpackPublicizeConnections;
   final String? jetpackFeaturedMediaUrl;
-  final bool? jetpackSharingEnabled;
+  final Links links;
 
-  const Post({
-    required this.id,
-    required this.date,
-    required this.dateGmt,
-    required this.guid,
-    required this.modified,
-    required this.modifiedGmt,
-    required this.slug,
-    required this.status,
-    required this.type,
-    required this.link,
-    required this.title,
-    required this.content,
-    required this.excerpt,
-    required this.author,
-    required this.featuredMedia,
-    required this.commentStatus,
-    required this.pingStatus,
-    required this.sticky,
-    required this.template,
-    required this.format,
-    required this.meta,
-    required this.categories,
-    required this.tags,
-    required this.jetpackPublicizeConnections,
-    required this.jetpackFeaturedMediaUrl,
-    required this.jetpackSharingEnabled,
-  });
+  const Post(
+      {required this.id,
+      required this.date,
+      required this.dateGmt,
+      required this.guid,
+      required this.modified,
+      required this.modifiedGmt,
+      required this.slug,
+      required this.status,
+      required this.type,
+      required this.link,
+      required this.title,
+      required this.content,
+      required this.excerpt,
+      required this.author,
+      required this.featuredMedia,
+      required this.commentStatus,
+      required this.pingStatus,
+      required this.sticky,
+      required this.template,
+      required this.format,
+      required this.meta,
+      required this.categories,
+      required this.tags,
+      required this.jetpackFeaturedMediaUrl,
+      required this.links,});
 
   @override
   List<Object?> get props => [
@@ -84,9 +81,8 @@ class Post extends Equatable {
         meta,
         categories,
         tags,
-        jetpackPublicizeConnections,
         jetpackFeaturedMediaUrl,
-        jetpackSharingEnabled,
+        links,
       ];
 }
 
@@ -123,6 +119,62 @@ class Guid {
 
   Map<String, dynamic> toJson() => {
         "rendered": rendered,
+      };
+}
+
+class Links {
+  Links({
+    required this.self,
+    required this.collection,
+    required this.about,
+    required this.author,
+    required this.replies,
+    required this.versionHistory,
+    required this.wpAttachment,
+    required this.wpTerm,
+    required this.curies,
+  });
+
+  List<About> self;
+  List<About> collection;
+  List<About> about;
+  List<Author> author;
+  List<Author> replies;
+  List<VersionHistory> versionHistory;
+  List<About> wpAttachment;
+  List<WpTerm> wpTerm;
+  List<Cury> curies;
+
+  factory Links.fromJson(Map<String, dynamic> json) => Links(
+        self: List<About>.from(json["self"].map((x) => About.fromJson(x))),
+        collection:
+            List<About>.from(json["collection"].map((x) => About.fromJson(x))),
+        about: List<About>.from(json["about"].map((x) => About.fromJson(x))),
+        author:
+            List<Author>.from(json["author"].map((x) => Author.fromJson(x))),
+        replies:
+            List<Author>.from(json["replies"].map((x) => Author.fromJson(x))),
+        versionHistory: List<VersionHistory>.from(
+            json["version-history"].map((x) => VersionHistory.fromJson(x))),
+        wpAttachment: List<About>.from(
+            json["wp:attachment"].map((x) => About.fromJson(x))),
+        wpTerm:
+            List<WpTerm>.from(json["wp:term"].map((x) => WpTerm.fromJson(x))),
+        curies: List<Cury>.from(json["curies"].map((x) => Cury.fromJson(x))),
+      );
+
+  Map<String, dynamic> toJson() => {
+        "self": List<dynamic>.from(self.map((x) => x.toJson())),
+        "collection": List<dynamic>.from(collection.map((x) => x.toJson())),
+        "about": List<dynamic>.from(about.map((x) => x.toJson())),
+        "author": List<dynamic>.from(author.map((x) => x.toJson())),
+        "replies": List<dynamic>.from(replies.map((x) => x.toJson())),
+        "version-history":
+            List<dynamic>.from(versionHistory.map((x) => x.toJson())),
+        "wp:attachment":
+            List<dynamic>.from(wpAttachment.map((x) => x.toJson())),
+        "wp:term": List<dynamic>.from(wpTerm.map((x) => x.toJson())),
+        "curies": List<dynamic>.from(curies.map((x) => x.toJson())),
       };
 }
 
@@ -227,30 +279,5 @@ class WpTerm {
         "taxonomy": taxonomy,
         "embeddable": embeddable,
         "href": href,
-      };
-}
-
-class Meta {
-  Meta({
-    required this.jetpackPublicizeMessage,
-    required this.jetpackIsTweetstorm,
-    required this.jetpackPublicizeFeatureEnabled,
-  });
-
-  String jetpackPublicizeMessage;
-  bool jetpackIsTweetstorm;
-  bool jetpackPublicizeFeatureEnabled;
-
-  factory Meta.fromJson(Map<String, dynamic> json) => Meta(
-        jetpackPublicizeMessage: json["jetpack_publicize_message"],
-        jetpackIsTweetstorm: json["jetpack_is_tweetstorm"],
-        jetpackPublicizeFeatureEnabled:
-            json["jetpack_publicize_feature_enabled"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "jetpack_publicize_message": jetpackPublicizeMessage,
-        "jetpack_is_tweetstorm": jetpackIsTweetstorm,
-        "jetpack_publicize_feature_enabled": jetpackPublicizeFeatureEnabled,
       };
 }
