@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:timesofkashmir/core/error/exceptions.dart';
 
@@ -37,7 +38,9 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
         throw Exception();
       }
     } catch (_) {
-      print(_.toString() + "::exception");
+      if (kDebugMode) {
+        print("postDataSource exception $_");
+      }
       throw Exception();
     }
   }

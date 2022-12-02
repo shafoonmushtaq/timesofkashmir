@@ -49,14 +49,14 @@ class OneSignalHelper {
   }
 
   void processNavigation(Map<String, dynamic>? data) {
-    if (data?["navigation"] == "/post_screen") {
-      int postId = int.tryParse(data?["postId"]) ?? 4484;
+    try {
+      int postId = int.tryParse(data!["post_id"].toString().trim()) ?? 39447;
       Future.delayed(const Duration(milliseconds: 1500), () async {
         navigatorKey.currentState!.pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (BuildContext context) => PostPage(postId)),
             (Route<dynamic> route) => false);
       });
-    }
+    } on Exception catch (_, e) {}
   }
 }
