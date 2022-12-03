@@ -6,7 +6,7 @@ import 'package:timesofkashmir/core/util/configurations.dart';
 import 'package:timesofkashmir/core/util/environment.dart';
 
 abstract class CategoriesRemoteDataSource {
-  /// Calls the https://www.timesofkashmir.in/wp-json/wp/v2/posts/ endpoint.
+  /// Calls the https://www.timesofkashmir.in/wp-json/wp/v2/categories/ endpoint.
   ///
   /// Throws a [ServerException] for all error codes.
   Future<List<CategoryModel>> getCategory();
