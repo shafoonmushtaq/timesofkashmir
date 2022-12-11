@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:timesofkashmir/core/util/url_launcher.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/news_home_page.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/admob_inline_banner.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/app_bar_title.dart';
+import '/core/util/url_launcher.dart';
+import '/features/news/presentation/pages/news_home_page.dart';
+import '/features/news/presentation/widgets/admob_inline_banner.dart';
+import '/features/news/presentation/widgets/app_bar_title.dart';
 import 'package:toast/toast.dart';
-import 'package:timesofkashmir/core/util/fade_on_scroll.dart';
-import 'package:timesofkashmir/core/util/add_helper.dart';
-import 'package:timesofkashmir/features/news/presentation/logic/news_notifier.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/admob_banner_add.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/placeholder.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/main_home_page.dart';
+import '/core/util/fade_on_scroll.dart';
+import '/core/util/add_helper.dart';
+import '/features/news/presentation/logic/news_notifier.dart';
+import '/features/news/presentation/widgets/admob_banner_add.dart';
+import '/features/news/presentation/widgets/placeholder.dart';
+import '/features/news/presentation/pages/main_home_page.dart';
 
 class PostPage extends ConsumerStatefulWidget {
   final int postId;

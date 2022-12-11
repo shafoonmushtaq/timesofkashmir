@@ -7,8 +7,8 @@ import 'package:intl/intl.dart';
 
 import 'package:timesofkashmir/core/util/html_remover.dart';
 
-import '../../../../core/util/configurations.dart';
-import '../../../../core/util/text_share.dart';
+import '/core/util/configurations.dart';
+import '/core/util/text_share.dart';
 
 class NewsItem extends StatelessWidget {
   final String imgIcon, title, date, link;

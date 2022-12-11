@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:timesofkashmir/core/usecases/usecase.dart';
-import 'package:timesofkashmir/features/news/domain/repositories/news_repository.dart';
-import 'package:timesofkashmir/core/error/failures.dart';
-import 'package:timesofkashmir/features/news/domain/entities/news.dart';
+import '/core/usecases/usecase.dart';
+import '/features/news/domain/repositories/news_repository.dart';
+import '/core/error/failures.dart';
+import '/features/news/domain/entities/news.dart';
 
 class GetNewsUseCase extends UseCase<List<News>, Params> {
   final NewsRepository repository;

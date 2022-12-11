@@ -4,6 +4,7 @@ const String appInfo =
 const String googlePlayUrl =
     "https://play.google.com/store/apps/details?id=in.timesofkashmir.tok&hl=en&gl=US";
 const List categoryOrder = [
+  "LATEST",
   "J&K Update",
   "Education",
   "Jobs",

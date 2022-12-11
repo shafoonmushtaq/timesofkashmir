@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:timesofkashmir/core/error/failures.dart';
+import '/core/error/failures.dart';
 
 class InputConverter {
   Either<Failure, int> stringToUnsignedInteger(String str) {

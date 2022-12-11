@@ -1,12 +1,12 @@
-import 'package:timesofkashmir/core/error/exceptions.dart';
-import 'package:timesofkashmir/features/news/data/models/category_model.dart';
+import '/core/error/exceptions.dart';
+import '/features/news/data/models/category_model.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:timesofkashmir/core/util/configurations.dart';
-import 'package:timesofkashmir/core/util/environment.dart';
+import '/core/util/configurations.dart';
+import '/core/util/environment.dart';
 
 abstract class CategoriesRemoteDataSource {
-  /// Calls the https://www.timesofkashmir.in/wp-json/wp/v2/categories/ endpoint.
+  /// Calls the https://www.timesofkashmir.in/wp-json/wp/v2/categories/?per_page=100 endpoint.
   ///
   /// Throws a [ServerException] for all error codes.
   Future<List<CategoryModel>> getCategory();
@@ -20,7 +20,7 @@ class CategoriesRemoteDataSourceImpl implements CategoriesRemoteDataSource {
   @override
   Future<List<CategoryModel>> getCategory() {
     return _getCategoriesFromUrl(
-      "${baseUrl}wp-json/wp/v2/categories",
+      "${baseUrl}wp-json/wp/v2/categories/?per_page=100",
     );
   }
 

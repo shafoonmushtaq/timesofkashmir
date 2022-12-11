@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:timesofkashmir/core/util/configurations.dart';
-import 'package:timesofkashmir/core/util/environment.dart';
-import 'package:timesofkashmir/core/util/url_launcher.dart';
-import 'package:timesofkashmir/features/news/presentation/logic/news_notifier.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/about_us_page.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/contact_page.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/disclaimer_page.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/privacy_page.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/svg_icon.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/app_bar_title.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/news_home_page.dart';
+import '/core/util/configurations.dart';
+import '/core/util/environment.dart';
+import '/core/util/url_launcher.dart';
+import '/features/news/presentation/logic/news_notifier.dart';
+import '/features/news/presentation/pages/about_us_page.dart';
+import '/features/news/presentation/pages/contact_page.dart';
+import '/features/news/presentation/pages/disclaimer_page.dart';
+import '/features/news/presentation/pages/privacy_page.dart';
+import '/features/news/presentation/widgets/svg_icon.dart';
+import '/features/news/presentation/widgets/app_bar_title.dart';
+import '/features/news/presentation/pages/news_home_page.dart';
 
-import '../../../../core/util/text_share.dart';
+import '/core/util/text_share.dart';
 
 class HomeView extends ConsumerStatefulWidget {
   const HomeView({Key? key}) : super(key: key);

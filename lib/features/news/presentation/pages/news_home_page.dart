@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:timesofkashmir/core/util/environment.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/post_page.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/news_item_shimmer.dart';
+import '/core/util/environment.dart';
+import '/features/news/presentation/pages/post_page.dart';
+import '/features/news/presentation/widgets/news_item_shimmer.dart';
 
-import 'package:timesofkashmir/core/util/add_helper.dart';
-import 'package:timesofkashmir/features/news/presentation/logic/news_notifier.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/admob_banner_add.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/news_item.dart';
+import '/core/util/add_helper.dart';
+import '/features/news/presentation/logic/news_notifier.dart';
+import '/features/news/presentation/widgets/admob_banner_add.dart';
+import '/features/news/presentation/widgets/news_item.dart';
 
 final addStateProvider = StateProvider<int>((ref) {
   return 0;
@@ -61,6 +61,13 @@ class _NewsHomePageState extends ConsumerState<NewsHomePage> {
                     ref.refresh(newsNotifierProvider(widget.categoryId));
                   },
                   child: CustomScrollView(slivers: [
+                    SliverVisibility(
+                        visible: news.isEmpty,
+                        sliver: const SliverFillRemaining(
+                          child: Center(
+                            child: Text("No Post Available"),
+                          ),
+                        )),
                     SliverList(
                         delegate: SliverChildBuilderDelegate(
                       (context, index) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:timesofkashmir/core/util/configurations.dart';
+import '/core/util/configurations.dart';
 
 class PlaceHolderImage extends StatelessWidget {
   const PlaceHolderImage({

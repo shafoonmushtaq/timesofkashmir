@@ -1,18 +1,18 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:timesofkashmir/core/network/network_info.dart';
-import 'package:timesofkashmir/features/news/data/datasources/categories_remote_data_sources.dart';
-import 'package:timesofkashmir/features/news/data/datasources/news_remote_data_source.dart';
-import 'package:timesofkashmir/features/news/data/datasources/post_remote_data_source.dart';
-import 'package:timesofkashmir/features/news/data/repositories/news_repository_impl.dart';
-import 'package:timesofkashmir/features/news/domain/entities/Post.dart' as post;
-import 'package:timesofkashmir/features/news/domain/usecases/get_category_use_case.dart';
-import 'package:timesofkashmir/features/news/domain/usecases/get_post_use_case.dart';
-import 'package:timesofkashmir/core/usecases/usecase.dart';
-import 'package:timesofkashmir/features/news/domain/entities/news.dart';
+import '/core/network/network_info.dart';
+import '/features/news/data/datasources/categories_remote_data_sources.dart';
+import '/features/news/data/datasources/news_remote_data_source.dart';
+import '/features/news/data/datasources/post_remote_data_source.dart';
+import '/features/news/data/repositories/news_repository_impl.dart';
+import '/features/news/domain/entities/Post.dart' as post;
+import '/features/news/domain/usecases/get_category_use_case.dart';
+import '/features/news/domain/usecases/get_post_use_case.dart';
+import '/core/usecases/usecase.dart';
+import '/features/news/domain/entities/news.dart';
 
-import 'package:timesofkashmir/features/news/domain/entities/category.dart' as category;
-import 'package:timesofkashmir/features/news/domain/usecases/get_news_use_case.dart';
+import '/features/news/domain/entities/category.dart' as category;
+import '/features/news/domain/usecases/get_news_use_case.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 

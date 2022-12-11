@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/app_bar_title.dart';
-import 'package:timesofkashmir/features/news/presentation/widgets/web_widget.dart';
+import '/features/news/presentation/widgets/app_bar_title.dart';
+import '/features/news/presentation/widgets/web_widget.dart';
 
-import 'package:timesofkashmir/core/util/environment.dart';
+import '/core/util/environment.dart';
 
 class PrivacyPage extends StatelessWidget {
   const PrivacyPage({super.key});

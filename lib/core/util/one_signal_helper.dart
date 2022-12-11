@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
-import 'package:timesofkashmir/core/util/firebase_helper.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/post_page.dart';
+import '/core/util/firebase_helper.dart';
+import '/features/news/presentation/pages/post_page.dart';
 
 class OneSignalHelper {
   final String id;

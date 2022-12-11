@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:timesofkashmir/features/news/domain/entities/category.dart';
+import '/features/news/domain/entities/category.dart';
 
 List<CategoryModel> categoryFromJson(String str) => List<CategoryModel>.from(
     json.decode(str).map((x) => CategoryModel.fromJson(x)));

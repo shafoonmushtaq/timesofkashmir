@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import '../../../../core/util/add_helper.dart';
+import '/core/util/add_helper.dart';
 
 class InlineBanner extends StatefulWidget {
   const InlineBanner({super.key});

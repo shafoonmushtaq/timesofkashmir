@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:timesofkashmir/features/news/domain/entities/category.dart';
-import 'package:timesofkashmir/features/news/presentation/pages/main_home_page.dart';
-import 'package:timesofkashmir/core/util/configurations.dart';
-import 'package:timesofkashmir/features/news/presentation/logic/news_notifier.dart';
+import '/features/news/domain/entities/category.dart';
+import '/features/news/presentation/pages/main_home_page.dart';
+import '/core/util/configurations.dart';
+import '/features/news/presentation/logic/news_notifier.dart';
 
 class SplashScreen extends ConsumerWidget {
   const SplashScreen({super.key});
