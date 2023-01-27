@@ -212,6 +212,11 @@ class _PostPageState extends ConsumerState<PostPage> {
                               },
                             },
                             onLinkTap: (url, _, __, ___) async {
+                              if (url.toString().contains(".pdf")) {
+                                UrlLauncher.urllaunch(
+                                    "https://docs.google.com/viewer?url=${url.toString()}");
+                                return;
+                              }
                               UrlLauncher.urllaunch(url.toString());
                             },
                             onImageTap: (src, _, __, ___) async {},
