@@ -5,7 +5,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '/core/util/add_helper.dart';
 
 class InlineBanner extends StatefulWidget {
-  const InlineBanner({super.key});
+  final String addUnitId;
+  const InlineBanner({super.key,required this.addUnitId});
 
   @override
   State<InlineBanner> createState() => _InlineBannerState();
@@ -38,7 +39,7 @@ class _InlineBannerState extends State<InlineBanner> {
         _adWidth.truncate());
 
     _inlineAdaptiveAd = BannerAd(
-      adUnitId: AdHelper.inlineBannerAdUnitId,
+      adUnitId: widget.addUnitId,
       size: size,
       request: const AdRequest(),
       listener: BannerAdListener(

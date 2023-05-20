@@ -163,7 +163,7 @@ class _PostPageState extends ConsumerState<PostPage> {
                           const SizedBox(
                             height: 20,
                           ),
-                          const InlineBanner(),
+                           InlineBanner(addUnitId: AdHelper.inlineBannerAdUnitId,),
                           Html(
                             data: data.content!.rendered
                                 .toString()
@@ -225,8 +225,9 @@ class _PostPageState extends ConsumerState<PostPage> {
                               return "css error";
                             },
                           ),
+                          InlineBanner(addUnitId: AdHelper.inlineBannerAdUnitTwoId,),
                           const SizedBox(
-                            height: 50,
+                            height: 70,
                           ),
                         ],
                       ),
