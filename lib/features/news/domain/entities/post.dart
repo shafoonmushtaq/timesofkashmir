@@ -23,38 +23,33 @@ class Post extends Equatable {
   final bool? sticky;
   final String? template;
   final String? format;
-  final List<dynamic>? meta;
-  final List<int>? categories;
-  final List<int>? tags;
   final String? jetpackFeaturedMediaUrl;
   final Links links;
 
-  const Post(
-      {required this.id,
-      required this.date,
-      required this.dateGmt,
-      required this.guid,
-      required this.modified,
-      required this.modifiedGmt,
-      required this.slug,
-      required this.status,
-      required this.type,
-      required this.link,
-      required this.title,
-      required this.content,
-      required this.excerpt,
-      required this.author,
-      required this.featuredMedia,
-      required this.commentStatus,
-      required this.pingStatus,
-      required this.sticky,
-      required this.template,
-      required this.format,
-      required this.meta,
-      required this.categories,
-      required this.tags,
-      required this.jetpackFeaturedMediaUrl,
-      required this.links,});
+  const Post({
+    required this.id,
+    required this.date,
+    required this.dateGmt,
+    required this.guid,
+    required this.modified,
+    required this.modifiedGmt,
+    required this.slug,
+    required this.status,
+    required this.type,
+    required this.link,
+    required this.title,
+    required this.content,
+    required this.excerpt,
+    required this.author,
+    required this.featuredMedia,
+    required this.commentStatus,
+    required this.pingStatus,
+    required this.sticky,
+    required this.template,
+    required this.format,
+    required this.jetpackFeaturedMediaUrl,
+    required this.links,
+  });
 
   @override
   List<Object?> get props => [
@@ -78,9 +73,6 @@ class Post extends Equatable {
         sticky,
         template,
         format,
-        meta,
-        categories,
-        tags,
         jetpackFeaturedMediaUrl,
         links,
       ];

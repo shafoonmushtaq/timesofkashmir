@@ -28,9 +28,6 @@ class PostModel extends Post {
     required bool? sticky,
     required String? template,
     required String? format,
-    required List<dynamic>? meta,
-    required List<int>? categories,
-    required List<int>? tags,
     required String? jetpackFeaturedMediaUrl,
     required Links links,
   }) : super(
@@ -54,9 +51,6 @@ class PostModel extends Post {
             sticky: sticky,
             template: template,
             format: format,
-            meta: meta,
-            categories: categories,
-            tags: tags,
             jetpackFeaturedMediaUrl: jetpackFeaturedMediaUrl,
             links: links);
 
@@ -81,9 +75,6 @@ class PostModel extends Post {
         sticky: json["sticky"],
         template: json["template"],
         format: json["format"],
-        meta: List<dynamic>.from(json["meta"].map((x) => x)),
-        categories: List<int>.from(json["categories"].map((x) => x)),
-        tags: List<int>.from(json["tags"].map((x) => x)),
         jetpackFeaturedMediaUrl: json["jetpack_featured_media_url"],
         links: Links.fromJson(json["_links"]),
       );
@@ -109,9 +100,6 @@ class PostModel extends Post {
         "sticky": sticky,
         "template": template,
         "format": format,
-        "meta": List<dynamic>.from(meta!.map((x) => x)),
-        "categories": List<dynamic>.from(categories!.map((x) => x)),
-        "tags": List<dynamic>.from(tags!.map((x) => x)),
         "jetpack_featured_media_url": jetpackFeaturedMediaUrl,
         "_links": links.toJson(),
       };
